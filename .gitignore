@@ -119,6 +119,8 @@ out
 
 .nuxt
 dist
+.wrangler
+.dev.vars
 
 # Gatsby files
 
