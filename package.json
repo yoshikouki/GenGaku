@@ -4,8 +4,8 @@
   "module": "src/index.tsx",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "bun --bun vite",
+    "build": "bun --bun vite build",
     "preview": "wrangler pages dev dist",
     "deploy": "$npm_execpath run build && wrangler pages deploy dist",
     "lint": "bun --bun x @biomejs/biome check .",
