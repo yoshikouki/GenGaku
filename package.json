@@ -4,8 +4,10 @@
   "module": "src/index.tsx",
   "type": "module",
   "scripts": {
-    "dev": "bun --bun vite",
-    "build": "bun --bun vite build",
+    "dev": "bun --bun run --hot src/index.tsx",
+    "build": "bun build:client && bun build:server",
+    "build:client": "bun build src/index.tsx --outdir dist --target browser --minify",
+    "build:server": "bun build src/index.tsx --outdir dist --target bun --minify",
     "preview": "wrangler pages dev dist",
     "deploy": "$npm_execpath run build && wrangler pages deploy dist",
     "lint": "bun --bun x @biomejs/biome check .",
@@ -21,12 +23,9 @@
   "devDependencies": {
     "@biomejs/biome": "1.6.4",
     "@cloudflare/workers-types": "^4.20240405.0",
-    "@hono/vite-cloudflare-pages": "^0.2.5",
-    "@hono/vite-dev-server": "^0.10.0",
     "@types/bun": "latest",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
-    "vite": "^5.2.8",
     "wrangler": "^3.48.0"
   },
   "peerDependencies": {
