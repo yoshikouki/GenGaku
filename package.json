@@ -12,7 +12,9 @@
     "deploy": "$npm_execpath run build && wrangler pages deploy dist",
     "lint": "bun --bun x @biomejs/biome check .",
     "format": "bun --bun x @biomejs/biome check --apply .",
-    "format:unsafe": "bun --bun x @biomejs/biome check --apply-unsafe ."
+    "format:unsafe": "bun --bun x @biomejs/biome check --apply-unsafe .",
+    "update:check": "bun --bun x npm-check-updates",
+    "update:all": "bun --bun x npm-check-updates -u"
   },
   "dependencies": {
     "@hono/react-renderer": "^0.1.1",
